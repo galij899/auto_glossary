@@ -3,7 +3,7 @@ import re
 import requests
 import bs4
 import docx
-import pandas as pd
+#import pandas as pd
 import oxford as ox
 
 
@@ -21,7 +21,7 @@ w_dict = re.findall(pattern, a)
 c = 0
 r_dict = {}
 for i in w_dict:
-    if len(r_dict) < 10:
+    if len(r_dict) < 40:
         try:
             ox.Word.get(i)
         except:
@@ -34,7 +34,7 @@ for i in w_dict:
             continue
     else:
         break
-pd_dict = pd.DataFrame.from_dict(r_dict, orient='index')
+#pd_dict = pd.DataFrame.from_dict(r_dict, orient='index')
 
 
 # exporting to word
